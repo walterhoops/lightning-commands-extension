@@ -1,3 +1,4 @@
-#Lightning Terminal Commands Extension for VSCode
+#
+**Lightning Terminal Commands Extension for VSCode**
 
 Lightning!
