@@ -1,0 +1,15 @@
+---
+name: Remove the first line of a text file
+command: "tail -n +2 \"${{file_name}}\""
+tags:
+  - file manipulation
+  - tail
+description: "Removes the first line line of a file using tail. Tail defaults to printing the first `x-1` lines, so `+2` indicates it should skip the first line."
+arguments:
+  - name: file_name
+    description: ~
+    default_value: ~
+source_url: "https://stackoverflow.com/questions/339483/how-can-i-remove-the-first-line-of-a-text-file-using-bash-sed-script"
+author: Aaron Digulla
+author_url: "https://stackoverflow.com/users/34088/aaron-digulla"
+shells: []
