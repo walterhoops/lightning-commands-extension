@@ -1,0 +1,27 @@
+name: Download Workflows
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+  
+jobs:
+  download-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Download files
+        run: |
+          git clone https://github.com/warpdotdev/workflows.git /tmp/workflows/
+          if [[ -d "./resources/workflows" ]]
+          then
+            rm -r ./resources/workflows/* 
+          fi
+          cp -r /tmp/workflows/specs/* ./resources/workflows/
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with: 
+          commit-message: update workflow resources
+          title: Automated Update warpdotdev workflows
+          body: This is an auto-generated PR. There are updates in warpdotdev/workflows not in this repositories resources.
+          branch: update-workflow-resources
