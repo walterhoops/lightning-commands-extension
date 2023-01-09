@@ -1,0 +1,14 @@
+---
+name: Remove a git submodule
+command: "git rm {{submodule_path}}"
+tags:
+  - git
+description: "Removes all traces of a git submodule from a repository. The `.git` dir of the submodule is kept around in the `/modules` folder of the main projects `.git` dir to make it possible to checkout past commits without requiring fetching from another repository."
+arguments:
+  - name: submodule_path
+    description: The path to the submodule that should be removed
+    default_value: ~
+source_url: "https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule"
+author: John Douthat
+author_url: "https://stackoverflow.com/users/2774/john-douthat"
+shells: []

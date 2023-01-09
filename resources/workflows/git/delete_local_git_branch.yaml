@@ -1,0 +1,14 @@
+---
+name: Delete local git branch
+command: "git branch --delete {{branch_name}}"
+tags:
+  - git
+description: "Deletes a local git branch only if it has been fully merged into the upstream branch. To force delete the branch irrespective of the its merged status, add the `--force` flag."
+arguments:
+  - name: branch_name
+    description: The name of the branch to delete
+    default_value: ~
+source_url: "https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-locally-and-remotely"
+author: Matthew Rankin
+author_url: "https://stackoverflow.com/users/95592/matthew-rankin"
+shells: []
