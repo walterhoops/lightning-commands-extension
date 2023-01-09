@@ -9,8 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Checkout branch
-        run: git checkout test
       - name: Download files
         run: |
           git clone https://github.com/warpdotdev/workflows.git /tmp/
