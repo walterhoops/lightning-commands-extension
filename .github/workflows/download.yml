@@ -12,8 +12,11 @@ jobs:
       - name: Download files
         run: |
           git clone https://github.com/warpdotdev/workflows.git /tmp/repos/
-          rm -r ./resources/workflows/
-          cp /tmp/repos/workflows/specs/* ./resources/workflows
+          if [[ -d "./resources/workflows" ]]
+          then
+            rm -r ./resources/workflows/* 
+          fi
+          cp /tmp/repos/workflows/specs/* ./resources/workflows/
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
